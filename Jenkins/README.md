@@ -1,4 +1,4 @@
-# SSH Script to Start Jenkins Agent #
+# SSH Script to Start Jenkins Agent [node-restart.sh] #
 This Bash script is designed to remotely start the Jenkins agent service on a specified server using SSH. The script utilizes the ssh command to connect to the server and execute the necessary commands.
 
 ## Script Explanation: ##
