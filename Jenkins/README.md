@@ -21,7 +21,7 @@ Make sure the user deployer has the necessary permissions to execute the systemc
 
 **Note:** Before running the script, review and modify it according to your specific server setup and security considerations.
 
-### Disclaimer:###
+### Disclaimer:
 This script assumes a certain environment and configuration. Make sure to adapt it to your specific needs and test it in a safe environment before deploying it in a production setting. Use at your own risk.
 
 
