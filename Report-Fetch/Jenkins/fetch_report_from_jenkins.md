@@ -59,7 +59,118 @@ To fetch detailed workflow information for a specific build number of the job, y
 http://jenkins_url/job/JOB_NAME/BUILD_NUMBER/wfapi/describe
 ```
 
-Replace "jenkins_url","JOB_NAME","BUILD_NUMBER" with the actual value you want to fetch information for. This URL provides a detailed JSON response describing the workflow of the specified build.
+Replace "jenkins_url","JOB_NAME","BUILD_NUMBER" with the actual value you want to fetch information for. This URL provides a detailed JSON response describing the workflow of the specified build as shown below.
+
+Here "JOB_NAME" is "Dev" and "BUILD_NUMBER" is "773".
+
+```
+{
+    "_links": {
+        "self": {
+            "href": "/job/Dev/773/wfapi/describe"
+        },
+        "changesets": {
+            "href": "/job/Dev/773/wfapi/changesets"
+        }
+    },
+    "id": "773",
+    "name": "testsecond#1.0.7-SNAPSHOT-21",
+    "status": "SUCCESS",
+    "startTimeMillis": 1707813909986,
+    "endTimeMillis": 1707813938736,
+    "durationMillis": 28750,
+    "queueDurationMillis": 3,
+    "pauseDurationMillis": 0,
+    "stages": [
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/6/wfapi/describe"
+                }
+            },
+            "id": "6",
+            "name": "Declarative: Checkout SCM",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813911114,
+            "durationMillis": 620,
+            "pauseDurationMillis": 0
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/15/wfapi/describe"
+                }
+            },
+            "id": "15",
+            "name": "Declarative: Tool Install",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813911880,
+            "durationMillis": 1342,
+            "pauseDurationMillis": 0
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/23/wfapi/describe"
+                }
+            },
+            "id": "23",
+            "name": "Version Validation and Checkout",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813913284,
+            "durationMillis": 3033,
+            "pauseDurationMillis": 0
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/87/wfapi/describe"
+                }
+            },
+            "id": "87",
+            "name": "Build",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813920694,
+            "durationMillis": 11016,
+            "pauseDurationMillis": 0
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/120/wfapi/describe"
+                }
+            },
+            "id": "120",
+            "name": "Publish to Jfrog Packages",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813931731,
+            "durationMillis": 3952,
+            "pauseDurationMillis": 0
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "/job/Dev/773/execution/node/154/wfapi/describe"
+                }
+            },
+            "id": "154",
+            "name": "Declarative: Post Actions",
+            "execNode": "",
+            "status": "SUCCESS",
+            "startTimeMillis": 1707813935733,
+            "durationMillis": 2772,
+            "pauseDurationMillis": 0
+        }
+    ]
+}
+
+```
+
 
 ## Usage
 You can use these URLs in your scripts or applications to fetch Jenkins build and workflow information programmatically. Ensure you have the necessary permissions to access Jenkins and the specific job information.
