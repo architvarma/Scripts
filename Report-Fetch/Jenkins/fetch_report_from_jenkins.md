@@ -11,7 +11,46 @@ http://jenkins_url/job/JOB_NAME/api/json?tree=builds[number,displayName,result,t
 ```
 
 Replace the value "jenkins_url","JOB_NAME" with the actual value
-This URL fetches a JSON response containing build details, including the build number, display name, result, timestamp, and duration.
+This URL fetches a JSON response containing build details, including the build number, display name, result, timestamp, and duration as shown below.
+
+```
+{
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+    "builds": [
+        {
+            "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+            "displayName": "testsecond#1.0.7-SNAPSHOT-21",
+            "duration": 28750,
+            "number": 773,
+            "result": "SUCCESS",
+            "timestamp": 1707813909983
+        },
+        {
+            "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+            "displayName": "testsecond#1.0.7-SNAPSHOT-21",
+            "duration": 32799,
+            "number": 772,
+            "result": "FAILURE",
+            "timestamp": 1707813814665
+        }
+    ]
+}
+
+```
+#### JSON Output Explanation
+
+The JSON output provides information about the builds of a Jenkins workflow job. Here's an explanation of each key-value pair:
+
+- `_class`: The class of the Jenkins job, indicating that it is a workflow job.
+- `builds`: An array containing information about each build of the job. Each build is represented as an object with the following keys:
+  - `_class`: The class of the Jenkins run, indicating that it is a workflow run.
+  - `displayName`: The display name of the build, which typically includes the job name, version, and a unique identifier.
+  - `duration`: The duration of the build in milliseconds.
+  - `number`: The build number, which is a unique identifier for the build.
+  - `result`: The result of the build, which can be "SUCCESS", "FAILURE", "UNSTABLE", etc.
+  - `timestamp`: The timestamp of when the build started, represented as the number of milliseconds since the Unix epoch.
+
+This output can be useful for tracking the status and duration of builds in your Jenkins workflow job.
 
 ## URL 2: Fetching Workflow Information
 To fetch detailed workflow information for a specific build number of the job, you can use the following URL:
